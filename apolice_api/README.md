@@ -1,4 +1,5 @@
-# Projeto Apólice API
+<!-- banner -->
+<img src="https://github.com/Armaanii/Apolice_API/blob/feature/atualizacao/banner.png">
 
 Este projeto é uma API desenvolvida com FastAPI que se conecta a um banco de dados PostgreSQL e utiliza RabbitMQ para processar mensagens e gerar parcelas para diferentes produtos. Ele é projetado para emitir apólices e gerenciar dados de forma eficiente.
 
@@ -169,5 +170,7 @@ a documentação oficial das ferramentas utilizadas.
 Esse arquivo `README.md` serve como um guia para configurar, executar e testar a API com os contêineres do Docker. 
 Ele cobre desde a inicialização do projeto até como interagir com a API e testar a integração do worker.
 
+<!-- banner -->
+<img src="https://github.com/Armaanii/Apolice_API/blob/feature/atualizacao/rodape.png">
 
 
