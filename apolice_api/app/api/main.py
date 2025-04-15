@@ -1,15 +1,26 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from app.core.publisher import send_to_queue
-from app.core.schemas import ApoliceInput
+from app.core.schemas import Produto111, Produto222
 
 app = FastAPI()
 
-@app.post("/emitir-apolice")
-async def emitir_apolice(payload: ApoliceInput):
-    try:
-        # Envia para a fila apropriada com base no produto
-        send_to_queue(payload.produto, payload.dict())
-        return {"message": "Processamento iniciado."}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+@app.post("/emitir")
+def emitir_apolice(payload: dict):
+    produto = payload.get("produto")
+
+    if produto == 111:
+        try:
+            Produto111(**payload)
+            return {"message": "Produto 111 validado com sucesso"}
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=str(e))
+
+    elif produto == 222:
+        try:
+            Produto222(**payload)
+            return {"message": "Produto 222 validado com sucesso"}
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=str(e))
+
+    else:
+        raise HTTPException(status_code=400, detail="Produto não suportado")

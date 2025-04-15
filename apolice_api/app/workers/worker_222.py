@@ -3,8 +3,6 @@ import json
 from app.core.database import SessionLocal
 from app.core.models import Parcela
 from app.core.schemas import Produto222
-from pydantic import ValidationError
-
 
 def callback(ch, method, properties, body):
     print("📥 Mensagem recebida, processando...")
@@ -20,7 +18,7 @@ def callback(ch, method, properties, body):
             parcela = Parcela(
                 numero=i,
                 valor=valor_parcela,
-                produto=222
+                produto=payload.produto
             )
             session.add(parcela)
 
@@ -30,13 +28,8 @@ def callback(ch, method, properties, body):
         print("✅ Mensagem processada e parcelas salvas com sucesso!")
         ch.basic_ack(delivery_tag=method.delivery_tag)
 
-
-    except ValidationError as ve:
-        print("❌ Erro de validação nos dados do Produto 222:", ve)
-        ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
-
     except Exception as e:
-        print("❌ Erro inesperado no processamento:", e)
+        print("❌ Erro ao processar mensagem:", e)
         ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)
 
 def main():
