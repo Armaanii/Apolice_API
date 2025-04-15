@@ -14,8 +14,9 @@ Este projeto é uma API desenvolvida com FastAPI que se conecta a um banco de da
 ## Requisitos
 
 Antes de rodar o projeto, você deve ter o **Docker** e o **Docker Compose** instalados em sua máquina.
-
+````
 - [Docker](https://www.docker.com/get-started)
+````
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Rodando o Projeto
