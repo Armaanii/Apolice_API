@@ -14,9 +14,7 @@ Este projeto é uma API desenvolvida com FastAPI que se conecta a um banco de da
 ## Requisitos
 
 Antes de rodar o projeto, você deve ter o **Docker** e o **Docker Compose** instalados em sua máquina.
-````
 - [Docker](https://www.docker.com/get-started)
-````
 - [Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Rodando o Projeto
@@ -25,14 +23,18 @@ Antes de rodar o projeto, você deve ter o **Docker** e o **Docker Compose** ins
 
 Clone este repositório para sua máquina local:
 
+````
 - git clone https://github.com/Armaanii/Apolice_API/tree/main/apolice_api
+````
 - cd apolice-api
 
 ---------------------------------------------------------------------------------------------
 
 2. Configurando o Docker
 - Com o Docker e o Docker Compose configurados, crie e suba os containers necessários:
+````
 - docker-compose up --build
+````
 
 ## Esse comando irá:
 - Construir e iniciar a API FastAPI
@@ -43,7 +45,9 @@ Clone este repositório para sua máquina local:
 🐇 Acessando o RabbitMQ
 
 -- Abra no navegador:
+````
 - http://localhost:15672
+````
 
 ## Login padrão:
 - #### Usuário: guest
@@ -55,9 +59,12 @@ As filas produto_111 e produto_222 estarão disponíveis na aba "Queues".
 ## 🔍 Iniciando o Worker
 
 Para iniciar o worker, execute o comando abaixo:
+````
 - docker-compose run --rm worker_111
+````
+````
 - docker-compose run --rm api python app/producer_test.py
-
+````
 O worker irá começar a escutar as mensagens na fila do RabbitMQ e processá-las, 
 inserindo as parcelas no banco de dados PostgreSQL.
 
@@ -65,13 +72,19 @@ inserindo as parcelas no banco de dados PostgreSQL.
 
 Para verificar se as parcelas foram inseridas no banco de dados PostgreSQL, 
 você pode acessar o banco de dados diretamente com o comando abaixo:
+````
 - docker exec -it postgres_db psql -U user -d apolice -c "SELECT * FROM parcela;"
+````
 
 ## 5. Enviando uma Mensagem de Teste
 
 Você pode usar o script producer_teste.py para enviar uma mensagem de teste para o RabbitMQ:
+````
 - docker-compose run --rm api python app/producer_test.py
+````
+````
 - docker-compose run --rm api python app/producer2_test.py
+````
 
 Esse comando irá enviar uma mensagem com os dados de exemplo para a fila produto_111. 
 O worker irá processar essa mensagem e inserir as parcelas no banco de dados.
@@ -82,7 +95,9 @@ Foi criado um teste com nome ````test_produto_invalido.py```` nele foi feito tod
 conforme a mensagem abaixo após rodar o arquivo.
 
 Quando você rodar esse teste:
+````
 - python app/test_produto_invalido.py
+````
 
 Resultado esperado da api.
 
@@ -100,15 +115,21 @@ documentação automática do FastAPI em:
 
 ## 8. Parando os Containers
 Para parar todos os containers, execute o comando abaixo:
+````
 - docker-compose down
+````
 
 - Isso irá parar e remover os containers, mas manterá os volumes persistentes (como o banco de dados).
 
 ## 🔄 Limpando o Banco de Dados (opcional)
+````
 - docker exec -it postgres_db psql -U user -d apolice
+````
 
 No terminal interativo do PostgreSQL, execute:
+````
 - TRUNCATE TABLE parcela RESTART IDENTITY;
+````
 
 ## ⚙️ Regras de Negócio
 - Produto 111
