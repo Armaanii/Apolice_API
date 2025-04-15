@@ -24,7 +24,7 @@ Antes de rodar o projeto, você deve ter o **Docker** e o **Docker Compose** ins
 
 Clone este repositório para sua máquina local:
 
-git clone [https://github.com/seu-usuario/apolice-api.git](https://github.com/Armaanii/Apolice_API/tree/main/apolice_api)
+git clone https://github.com/Armaanii/Apolice_API/tree/main/apolice_api
 cd apolice-api
 
 ---------------------------------------------------------------------------------------------
