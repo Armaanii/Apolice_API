@@ -12,11 +12,9 @@ channel.queue_declare(queue="produto_222", durable=True)
 payload = {
     "produto": 222,
     "item": {
-        "veiculo": {
-            "placa": "ABC1D23",
-            "chassi": "ABCDE123",
-            "modelo": "Porsche"
-        }
+        "placa": "ABC1D23",
+        "chassi": "ABCDE123",
+        "modelo": "Porsche"
     },
     "valores": {
         "precoTotal": 3000.0,
