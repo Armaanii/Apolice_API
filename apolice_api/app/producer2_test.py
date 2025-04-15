@@ -14,13 +14,13 @@ payload = {
     "item": {
         "veiculo": {
             "placa": "ABC1D23",
-            "chassi": "9BWZZZ377VT004251",
-            "modelo": "Gol G5 1.0"
+            "chassi": "ABCDE123",
+            "modelo": "Porsche"
         }
     },
     "valores": {
-        "precoTotal": 1800.0,
-        "parcelas": 6
+        "precoTotal": 3000.0,
+        "parcelas": 12
     }
 }
 
