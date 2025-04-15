@@ -75,14 +75,29 @@ Você pode usar o script producer_teste.py para enviar uma mensagem de teste par
 Esse comando irá enviar uma mensagem com os dados de exemplo para a fila produto_111. 
 O worker irá processar essa mensagem e inserir as parcelas no banco de dados.
 
-## 6. Acessando a API
+## 6. Teste de envio de um Produto inexistente
+
+Foi criado um teste com nome ````test_produto_invalido.py```` nele foi feito toda tratativa para de erro, 
+conforme a mensagem abaixo após rodar o arquivo.
+
+Quando você rodar esse teste:
+- python app/test_produto_invalido.py
+
+Resultado esperado da api.
+
+````
+- Status Code: 400
+- Resposta: {'detail': 'Produto não suportado'}
+````
+
+## 7. Acessando a API
 Após a construção e execução do Docker Compose, a API estará disponível 
 em http://localhost:8000. Você pode acessar os endpoints definidos e verificar a 
 documentação automática do FastAPI em:
 - Documentação da API: http://localhost:8000/docs
 - Redefinição do OpenAPI: http://localhost:8000/redoc
 
-## 7. Parando os Containers
+## 8. Parando os Containers
 Para parar todos os containers, execute o comando abaixo:
 - docker-compose down
 
