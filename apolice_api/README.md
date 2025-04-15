@@ -69,8 +69,8 @@ você pode acessar o banco de dados diretamente com o comando abaixo:
 ## 5. Enviando uma Mensagem de Teste
 
 Você pode usar o script producer_teste.py para enviar uma mensagem de teste para o RabbitMQ:
-- python app/workers/producer_teste.py
-- python app/workers/producer2_teste.py
+- docker-compose run --rm api python app/producer_test.py
+- docker-compose run --rm api python app/producer2_test.py
 
 Esse comando irá enviar uma mensagem com os dados de exemplo para a fila produto_111. 
 O worker irá processar essa mensagem e inserir as parcelas no banco de dados.
