@@ -1,5 +1,5 @@
 <!-- banner -->
-<img src="https://github.com/Armaanii/Apolice_API/blob/main/banner.png">
+<img src="https://github.com/Armaanii/Apolice_API/blob/feature/atualizacao/banner.png">
 
 
 # Projeto Apólice API
@@ -195,4 +195,4 @@ Esse arquivo `README.md` serve como um guia para configurar, executar e testar a
 Ele cobre desde a inicialização do projeto até como interagir com a API e testar a integração do worker.
 
 <!-- rodapé -->
-<img src="https://github.com/Armaanii/Apolice_API/blob/main/rodape.png">
+<img src="https://github.com/Armaanii/Apolice_API/blob/feature/atualizacao/rodape.png">
