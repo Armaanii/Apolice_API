@@ -27,7 +27,7 @@ Clone este repositório para sua máquina local:
 ````
 git clone https://github.com/Armaanii/Apolice_API/tree/main/apolice_api
 ````
-- cd apolice-api
+- cd apolice-api (raiz do projeto)
 
 ---------------------------------------------------------------------------------------------
 
