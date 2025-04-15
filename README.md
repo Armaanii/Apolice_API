@@ -1,5 +1,5 @@
 <!-- banner -->
-<img src="https://github.com/amajaying/amajaying/blob/main/Banner.png">
+<img src="https://github.com/Armaanii/Apolice_API/blob/main/foto_readme.png>
 
 # Projeto Apólice API
 
