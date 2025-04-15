@@ -1,9 +1,6 @@
 <!-- banner -->
 <img src="https://github.com/Armaanii/Apolice_API/blob/feature/atualizacao/banner.png">
 
-
-# Projeto Apólice API
-
 Este projeto é uma API desenvolvida com FastAPI que se conecta a um banco de dados PostgreSQL e utiliza RabbitMQ para processar mensagens e gerar parcelas para diferentes produtos. Ele é projetado para emitir apólices e gerenciar dados de forma eficiente.
 
 ## Tecnologias Utilizadas
