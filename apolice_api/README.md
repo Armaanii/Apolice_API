@@ -43,7 +43,7 @@ docker-compose up --build
 - Iniciar o RabbitMQ com interface gráfica
 - Iniciar os workers (worker_111 e worker_222)
 
-🐇 Acessando o RabbitMQ
+## 🐇 Acessando o RabbitMQ
 
 -- Abra no navegador:
 ````
