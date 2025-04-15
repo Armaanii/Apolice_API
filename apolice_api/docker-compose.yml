@@ -1,0 +1,68 @@
+
+services:
+  api:
+    build: .
+    container_name: api
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: ["bash", "-c", "./app/init_db.sh && uvicorn app.api.main:app --host 0.0.0.0 --port 8000 --reload"]
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/code
+    depends_on:
+      - postgres_db
+      - rabbitmq
+
+  worker_111:
+    build: .
+    container_name: worker_111
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: python app/workers/worker_111.py
+    environment:
+      - PYTHONPATH=/code
+    depends_on:
+      - rabbitmq
+      - postgres_db
+
+  worker_222:
+    build: .
+    container_name: worker_222
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: python app/workers/worker_222.py
+    environment:
+      - PYTHONPATH=/code
+    depends_on:
+      - rabbitmq
+      - postgres_db
+
+  postgres_db:
+    image: postgres:13
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: apolice
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672" # painel de controle
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+volumes:
+  pgdata:
