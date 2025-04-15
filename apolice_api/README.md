@@ -30,7 +30,7 @@ Clone este repositório para sua máquina local:
 
 ---------------------------------------------------------------------------------------------
 
-2. Configurando o Docker
+## 2. Configurando o Docker
 - Com o Docker e o Docker Compose configurados, crie e suba os containers necessários:
 - docker-compose up --build
 
