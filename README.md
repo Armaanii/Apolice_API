@@ -1,5 +1,5 @@
 <!-- banner -->
-<img src="https://github.com/Armaanii/Apolice_API/blob/main/foto_readme.png">
+<img src="https://github.com/Armaanii/Apolice_API/blob/main/banner.png">
 
 
 # Projeto Apólice API
@@ -194,4 +194,5 @@ a documentação oficial das ferramentas utilizadas.
 Esse arquivo `README.md` serve como um guia para configurar, executar e testar a API com os contêineres do Docker. 
 Ele cobre desde a inicialização do projeto até como interagir com a API e testar a integração do worker.
 
-
+<!-- rodapé -->
+<img src="https://github.com/Armaanii/Apolice_API/blob/main/rodape.png">
