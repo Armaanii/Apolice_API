@@ -179,6 +179,7 @@ TRUNCATE TABLE parcela RESTART IDENTITY;
 }
 ```
 
+### Abaixo o Diagrama do projeto.
 <!-- diagrama -->
 <img src="https://github.com/Armaanii/Apolice_API/blob/main/diagrama_teste.png">
 
