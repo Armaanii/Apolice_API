@@ -180,7 +180,7 @@ TRUNCATE TABLE parcela RESTART IDENTITY;
 ```
 
 <!-- diagrama -->
-<img src="https://github.com/Armaanii/Apolice_API/blob/feature/atualizacao/diagrama_teste.png">
+<img src="https://github.com/Armaanii/Apolice_API/blob/main/diagrama_teste.png">
 
 ## Considerações Finais
 Este é um projeto básico para gerenciar apólices e processar parcelas usando RabbitMQ e PostgreSQL. 
